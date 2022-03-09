@@ -36,10 +36,10 @@ clear, clc, close all
 set(0,'DefaultFigureWindowStyle','docked')
 
 % Path to data files in MAT format (put files you wish to process here)
-mainDir = '/media/wescomp/WesDataDrive/2_mat/'
+mainDir = '2_mat\'
 
 % Path to output directory (results go here)
-outDir = '/media/wescomp/WesDataDrive/edncnn_output/'
+outDir = 'edncnn_output\'
 
 % Settings
 inputVar.depth = 2; %feature depth per polarity (k in paper)
@@ -57,7 +57,7 @@ inputVar.writeOutGIF = false; %write out an animated gif of the EPM labels assig
 inputVar.focalLength = 4; %mm (4.5=240C, 4=346(wide), 12=346(zoom)
 inputVar.Wx = 6.4;  %width of focal plane in mm
 inputVar.Wy = 4.8;  %height of focal plane in mm
-load('camera/fpn_346.mat')
+load('camera\fpn_346.mat')
 inputVar.fpn = fpn; %fixed pattern noise
 clear fpn
 
@@ -180,7 +180,7 @@ buildTrainTestData(outDir)
 
 %% Train/test EDnCNN network
 
-results = trainEDnCNN(outDir); %original CNN
+% results = trainEDnCNN(outDir); %original CNN
 % results = trainEDnCNN3D(outDir); %updated CNN
 
 
